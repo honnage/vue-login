@@ -35,7 +35,7 @@ export default {
 body{
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg, #eef8ff, #afd1fd);
+  /* background: linear-gradient(120deg, #eef8ff, #afd1fd); */
   height: 100vh;
   overflow: hidden;
 }
@@ -108,7 +108,7 @@ form .txt_field{
 .pass:hover{
     text-decoration: underline;
 }
-input[type="submit"]{
+/* input[type="submit"]{
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -123,7 +123,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
     border-color: #2691d9;
     transition: .5s;
-}
+} */
 .signup_link{
     margin: 30px 0;
     text-align: center;
