@@ -1,10 +1,13 @@
 <template>
   <h1>Sign Up</h1>
-  <div class="register">
+  <div class="sign-up">
     <input type="text" v-model="username" placeholder="Enter Username" />
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="text" v-model="password" placeholder="Enter Password" />
     <button v-on:click="signUp">Sign Up</button>
+    <p>
+      <router-link to="/Sign-in">Login</router-link>
+    </p>
   </div>
 </template>
 <script>
@@ -43,7 +46,8 @@ export default {
 </script>
 
 <style>
-.register input {
+
+.sign-up input {
   width: 300px;
   height: 40px;
   padding-left: 20px;
@@ -54,7 +58,7 @@ export default {
   border: 1px solid skyblue;
   
 }
-.register button {
+.sign-up button {
   width: 320px;
   height: 40px;
   border: 1px solid skyblue;
