@@ -1,3 +1,4 @@
+
 <template>
   <v-app>
     <div class="container">
@@ -72,7 +73,7 @@
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </p>
-            <button class="btn transparent" id="sign-up-btn">
+            <button class="btn transparent" id="sign-up-btn" >
               Sign up
             </button>
           </div>
@@ -85,7 +86,7 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
               laboriosam ad deleniti.
             </p>
-            <button class="btn transparent" id="sign-in-btn">
+            <button class="btn transparent" id="sign-in-btn" >
               Sign in
             </button>
           </div>
@@ -100,25 +101,12 @@
 export default {
   
   name: "SignInSignUp",
-  methods() {
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container");
-
-    sign_up_btn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
-    });
-
-    sign_in_btn.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode");
-    });
-  },
 };
 
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
+/* 
 * {
   margin: 0;
   padding: 0;
@@ -350,7 +338,7 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
-/* ANIMATION */
+
 
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
@@ -516,5 +504,5 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
-}
+} */
 </style>

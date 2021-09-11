@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="container"> -->
-  <div class="login">
+  <div class="login-test">
     <h1>Login</h1>
 
     <div v-if="error" class="alert alert-danger" role="alert">
@@ -48,6 +48,8 @@ export default {
       console.warn(result.data);
 
       if (result.data.success == true) {
+        let user = await axios.get(`http://api.teedev.online/api/v1/user`);
+        console.warn(user.data);
         // localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         // this.$router.push({ name: "Home" });
       } else {
@@ -66,14 +68,14 @@ export default {
 </script>
 
 <style>
-body {
+/* body {
   margin: 0;
   padding: 0;
   background: linear-gradient(120deg, #eef8ff, #afd1fd);
   height: 100vh;
   overflow: hidden;
 }
-.login {
+.login-test {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,20 +84,22 @@ body {
   background: white;
   border-radius: 25px;
 }
-.login h1 {
+.login-test h1 {
   text-align: center;
   margin-top: 25px;
   padding: 0 0 20px 0;
   border-bottom: 1px solid silver;
 }
-.login data {
-  /* padding: 0 5px; */
+.login-test data {
+  padding: 0 5px;
   box-shadow: border-box;
 }
 data .txt_field {
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 30px 0;
+  left: 10%;
+  width: 80%;
 }
 .txt_field input {
   width: 100%;
@@ -171,5 +175,5 @@ input[type="submit"]:hover {
 }
 .signup_link a:hover {
   text-decoration: underline;
-}
+} */
 </style>
