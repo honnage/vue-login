@@ -4,13 +4,20 @@
     <a href="">Home</a>
     <a href="">tet</a>
 
-    <a href="">Logout</a>
+    <a v-on:click="logout" href="">Logout</a>
   </div>
   <!-- </div> -->
 </template>
 <script>
 export default {
   name: "header",
+  methods:{
+      logout(){
+          console.warn("logout");
+          localStorage.clear();
+          this.$router.push({name:"SignIn"})
+      }
+  }
 };
 </script>
 <style>
