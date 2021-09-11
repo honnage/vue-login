@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <section>
     <div class="imgBx">
       <img src="../assets/img/log.svg" />
@@ -10,23 +11,23 @@
           {{ error }}
         </div>
         <!-- <form> -->
-          <div class="inputBx">
-            <span>Username </span>
-            <input type="text" v-model="userName" required />
-          </div>
-          <div class="inputBx">
-            <span>Password </span>
-            <input type="password" v-model="passWord" required />
-          </div>
-          <div class="remember">
-            <label><input type="checkbox" name="" /> Remember me</label>
-          </div>
-          <div class="inputBx">
-            <input type="submit" v-on:click="SignIn" value="Sign in" />
-          </div>
-          <div class="inputBx">
-            <p>Don't have an account? <a href="">Sign up</a></p>
-          </div>
+        <div class="inputBx">
+          <span>Username </span>
+          <input type="text" v-model="userName" required />
+        </div>
+        <div class="inputBx">
+          <span>Password </span>
+          <input type="password" v-model="passWord" required />
+        </div>
+        <div class="remember">
+          <label><input type="checkbox" name="" /> Remember me</label>
+        </div>
+        <div class="inputBx">
+          <input type="submit" v-on:click="SignIn" value="Sign in" />
+        </div>
+        <div class="inputBx">
+          <p>Don't have an account? <a href="">Sign up</a></p>
+        </div>
         <!-- </form> -->
 
         <!-- <h3>Login with social media</h3>
@@ -40,9 +41,13 @@
   </section>
 </template>
 <script>
+import Header from "./Header.vue";
 import axios from "axios";
 export default {
   name: "SignIn",
+  components: {
+    Header,
+  },
   data() {
     return {
       userName: "",
@@ -62,10 +67,9 @@ export default {
       console.warn(result.data);
 
       if (result.data.success == true) {
-        let user = await axios.get(`http://api.teedev.online/api/v1/user`);
-        console.warn(user.data);
-        // localStorage.setItem("user-info", JSON.stringify(result.data[0]));
-        // this.$router.push({ name: "Home" });
+        console.warn(result.data);
+        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        this.$router.push({ name: "Home" });
       } else {
         console.warn(result.data.errorCode);
         this.error = result.data.errorText;
@@ -90,14 +94,14 @@ export default {
 section {
   padding: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
 }
 
 section .imgBx {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   display: flex;
 }
 
@@ -107,7 +111,7 @@ section .imgBx:before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   background: linear-gradient(225deg, #e91e63, #03a9f4);
   z-index: 1;
   mix-blend-mode: screen;
@@ -118,7 +122,7 @@ section .imgBx img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   object-fit: cover;
 }
 
@@ -127,7 +131,7 @@ section .contentBx {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 100%;
+  height: 90vh;
 }
 
 section .contentBx .formBx {
@@ -216,7 +220,7 @@ section .contentBx .formBx .sci {
 section .contentBx .formBx .sci li {
   list-style: none;
   width: 50px;
-  height: 50px;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,7 +251,7 @@ section .contentBx .formBx .sci li i {
     top: 0;
     left: 0;
     widows: 100%;
-    height: 100%;
+    height: 90vh;
   }
 
   section .contentBx {
@@ -255,7 +259,7 @@ section .contentBx .formBx .sci li i {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 90vh;
     z-index: 1;
   }
 
