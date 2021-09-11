@@ -43,8 +43,7 @@ export default {
 </script>
 
 <style>
-.register input,
-.login input {
+.register input {
   width: 300px;
   height: 40px;
   padding-left: 20px;
@@ -53,14 +52,16 @@ export default {
   margin-right: auto;
   margin-left: auto;
   border: 1px solid skyblue;
+  
 }
-.register button,
-.login button {
+.register button {
   width: 320px;
   height: 40px;
   border: 1px solid skyblue;
   background: skyblue;
   color: #fff;
+  margin-right: auto;
+  margin-left: auto;
   cursor: pointer;
 }
 </style>
