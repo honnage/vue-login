@@ -9,12 +9,16 @@
 
         <form method="post">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" v-model="userName" placeholder="Enter Username" />
+ 
+                <!-- <input type="text" required> -->
                 <span></span>
                 <label>Username</label>
             </div>
             <div class="txt_field">
-                <input type="pasword" required>
+                <input type="text" v-model="passWord" placeholder="Enter Password" />
+
+                <!-- <input type="pasword" required> -->
                  <span></span>
                 <label>Pasword</label>
             </div>
@@ -29,8 +33,15 @@
 <script>
 export default {
   name: "Login",
+  data() {
+    return {
+      userName: "",
+      passWord: "",
+    };
+  },
 };
 </script>
+
 <style>
 body{
   margin: 0;
