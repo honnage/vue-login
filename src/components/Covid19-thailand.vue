@@ -3,8 +3,8 @@
   <div class="container my-4">
     <h1>สถานการณ์โควิด-19 ในประทเศไทย</h1>
     <!-- {{ CovidAPI }}
-    <br />
-    <p>ประจำวันที่: {{ CovidAPI.txn_date }}</p>
+    <br /> -->
+    <!-- <p>ประจำวันที่: {{ CovidAPI.txn_date }}</p>
     <p>ผู้ป่วยรายใหม่: {{ CovidAPI.new_case }} คน</p>
     <p>ผู้ป่วยสะสม: {{ CovidAPI.total_case }} คน</p>
     <p>เสียชีวิตเพิ่ม: {{ CovidAPI.new_death }} คน</p>
@@ -17,8 +17,10 @@
     <br /> -->
 
     <div class="row">
-      <div class="col-xs-12 col-sm-12  ">
-        <center><div class="data">ประจำวันที่: {{ CovidAPI.txn_date }}</div></center>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <center>
+          <div class="data">ประจำวันที่: {{ CovidAPI.txn_date }}</div>
+        </center>
       </div>
 
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 new_recovered">
@@ -85,7 +87,7 @@ export default {
       .get(apiURL)
       .then((res) => {
         this.CovidAPI = res.data[0];
-        console.warn(res.data);
+        console.warn(res.data)
       })
       .catch((error) => {
         console.log(error);
@@ -98,7 +100,7 @@ export default {
 .data {
   background-color: rgb(246, 255, 122);
   text-align: center;
-  width: 30%;
+  width: 80%;
   height: 100%;
   padding: 1rem;
   border-radius: 15px;
