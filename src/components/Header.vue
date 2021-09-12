@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="contentBx"> -->
   <div class="nav">
-    <a href="">Home</a>
+    <router-link to="/">Home</router-link>
     <a href="">tet</a>
 
     <a v-on:click="logout" href="">Logout</a>
@@ -11,13 +11,13 @@
 <script>
 export default {
   name: "header",
-  methods:{
-      logout(){
-          console.warn("logout");
-          localStorage.clear();
-          this.$router.push({name:"SignIn"})
-      }
-  }
+  methods: {
+    logout() {
+      console.warn("logout");
+      localStorage.clear();
+      this.$router.push({ name: "SignIn" });
+    },
+  },
 };
 </script>
 <style>
@@ -27,17 +27,17 @@ export default {
 }
 
 .nav a {
-    float: left;
-    color: #fff;
-    padding: 20px 20px;
-    text-align: center;
-    font-size: 17px;
-    text-decoration: none;
-    margin-right: 5px;
+  float: left;
+  color: #fff;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 17px;
+  text-decoration: none;
+  margin-right: 5px;
 }
 
 .nav a:hover {
-    /* background: #ddd; */
-    color: rgb(199, 199, 199);
+  /* background: #ddd; */
+  color: rgb(199, 199, 199);
 }
 </style>

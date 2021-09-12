@@ -6,7 +6,7 @@
     </div>
     <div class="contentBx">
       <div class="formBx">
-        <h2>Login</h2>
+       <center> <h1 >Login</h1></center>
         <div v-if="error" class="alert alert-danger" role="alert">
           {{ error }}
         </div>
@@ -57,18 +57,22 @@ export default {
   },
   methods: {
     async SignIn() {
-      let result = await axios.post(
+      const result = await axios.post(
         `http://api.teedev.online/api/v1/user/login`,
         {
           userName: this.userName,
           passWord: this.passWord,
         }
       );
-      console.warn(result.data);
 
       if (result.data.success == true) {
         console.warn(result.data);
-        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        console.warn(result);
+        localStorage.setItem("token", result.data.token);
+        localStorage.setItem("user-info", JSON.stringify(result));
+
+        console.warn(result.data.token);
+        // console.warn(result.data.role);
         this.$router.push({ name: "Home" });
       } else {
         console.warn(result.data.errorCode);
@@ -96,6 +100,7 @@ section {
   width: 100%;
   height: 90vh;
   display: flex;
+  
 }
 
 section .imgBx {
@@ -138,10 +143,11 @@ section .contentBx .formBx {
   width: 50%;
 }
 
-section .contentBx .formBx h2 {
+section .contentBx .formBx h1 {
   color: #607d8b;
+  /* text-align: center; */
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-transform: uppercase;
   margin-bottom: 20px;
   border-bottom: 4px solid #ff4584;
