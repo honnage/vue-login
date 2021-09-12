@@ -3,8 +3,8 @@
   <div v-if="dataAPI">
     <div class="container my-4">
       <h1>Hello {{ dataAPI.data.role }}</h1>
-       <p><b>role :</b> {{dataAPI.data.role}}</p>
-      <p><b>token :</b> {{dataAPI.data.token}}</p>
+      <p><b>role :</b> {{ dataAPI.data.role }}</p>
+      <p><b>token :</b> {{ dataAPI.data.token }}</p>
       <p></p>
 
       <p><b>data all from API by JSON localStorage</b></p>
@@ -14,7 +14,6 @@
 </template>
 <script>
 import Header from "./Header.vue";
-
 export default {
   dataAPI: "Home",
   data() {
@@ -25,7 +24,7 @@ export default {
   components: {
     Header,
   },
-  mounted() {
+   mounted() {
     let dataAPI = localStorage.getItem("user-info");
     console.warn(dataAPI);
 
@@ -34,11 +33,7 @@ export default {
       this.$router.push({ name: "SignIn" });
     }
   },
+  
 };
 </script>
-<style>
-td {
-  width: 160px;
-  height: 40px;
-}
-</style>
+<style></style>

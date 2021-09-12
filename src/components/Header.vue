@@ -1,22 +1,43 @@
 <template>
   <!-- <div class="contentBx"> -->
   <div class="nav">
-    <router-link to="/">Home</router-link>
-    <a href="">tet</a>
+    <router-link to="/Covid19-thailand">COVID-19 Thailand</router-link>
+    <!-- <router-link to="/">Home</router-link> -->
 
-    <a v-on:click="logout" href="">Logout</a>
+    <div v-if="dataAPI == null">
+      <router-link to="/Sign-in">Login</router-link>
+    </div>
+
+    <div v-if="dataAPI">
+      <a v-on:click="logout" href="">Logout</a>
+    </div>
   </div>
   <!-- </div> -->
 </template>
 <script>
 export default {
   name: "header",
+  data() {
+    return {
+      dataAPI: "",
+    };
+  },
+
   methods: {
     logout() {
       console.warn("logout");
       localStorage.clear();
       this.$router.push({ name: "SignIn" });
     },
+  },
+  mounted() {
+    let dataAPI = localStorage.getItem("user-info");
+    console.warn(dataAPI);
+
+    this.dataAPI = JSON.parse(dataAPI);
+    // if (!dataAPI) {
+    //   this.$router.push({ name: "SignIn" });
+    // }
   },
 };
 </script>

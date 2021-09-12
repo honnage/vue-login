@@ -4,7 +4,7 @@ import SignIn from "./components/SignIn.vue";
 import SignInTest from "./components/viewtest/SignIn-test.vue";
 import LoginTest from "./components/viewtest/Login-test.vue";
 import SignInSignUp from "./components/viewtest/SignIn-SignUp.vue";
-
+import Covid19Thailand from "./components/Covid19-thailand.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -12,6 +12,11 @@ const routes = [
         name: "Home", 
         component: Home, 
         path: "/" 
+    },
+    { 
+        name: "Covid19Thailand", 
+        component: Covid19Thailand, 
+        path: "/Covid19-thailand" 
     },
     { 
         name: "SignUp", 
