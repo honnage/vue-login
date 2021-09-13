@@ -32,7 +32,7 @@ export default {
   },
   mounted() {
     let dataAPI = localStorage.getItem("user-info");
-    console.warn(dataAPI);
+    // console.warn(dataAPI);
 
     this.dataAPI = JSON.parse(dataAPI);
     // if (!dataAPI) {
